@@ -1,4 +1,4 @@
-function Find-MetaProducts {
+function Find-MetaProduct {
 	[CmdletBinding()]
 	param (
 		[Parameter(Mandatory=$true)]

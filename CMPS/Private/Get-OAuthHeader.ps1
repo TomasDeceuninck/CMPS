@@ -1,8 +1,18 @@
-# A method to generate Oauth header for MKM requests (provided you have all four tokens and secrets)
-# Many thanks to @adbertram for his Twitter PowerShell Module
+<#
+.SYNOPSIS
+	Generates OAuth header for API request
+.DESCRIPTION
+	A method to generate Oauth header for MKM requests (provided you have all four tokens and secrets)
+.INPUTS
+	String
+.OUTPUTS
+	System.Collections.Hashtable
+.NOTES
+	Many thanks to @adbertram for his Twitter PowerShell Module
+#>
 function Get-OAuthHeader {
-	[CmdletBinding(DefaultParameterSetName = 'None')]
-	[OutputType('System.Management.Automation.PSCustomObject')]
+	[CmdletBinding()]
+	[OutputType('System.Collections.Hashtable')]
 	param (
 		[Parameter(Mandatory)]
 		[string]$URI,
