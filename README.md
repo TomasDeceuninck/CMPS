@@ -9,7 +9,13 @@ Clone the repo.
 ```powershell
 Import-Module .\CMPS
 # Create a new connection object
-$con = New-CMConnection -ApiKey '<yourApiKey>' -ApiSecret '<yourApiSecret>' -AccessToken '<yourAccessToken>' -AccessTokenSecret '<yourAccessTokenSecret>'
+$connectionParams = @{
+	ApiKey = '<yourApiKey>'
+	ApiSecret = '<yourApiSecret>'
+	AccessToken = '<yourAccessToken>'
+	AccessTokenSecret = '<yourAccessTokenSecret>'
+}
+$con = New-CMConnection @connectionParams
 # Save the connection to a file
 $exp = Export-CMConnection -Connection $con -Path . -Force
 # Import a saved connection from a file
